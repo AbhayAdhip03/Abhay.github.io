@@ -48,7 +48,7 @@ header nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 3%; /* Full-width layout padding */
+    padding: 1rem 3%;
 }
 .logo {
     font-family: var(--heading-font);
@@ -162,6 +162,112 @@ nav ul li a:hover {
     line-height: 1.7;
 }
 
+/* --- STYLES FOR ABOUT US PAGE --- */
+.about-hero {
+    position: relative;
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--light-color);
+    background-image: url('images/about1.png'); /* NOTE: Make sure you have this image */
+    background-size: cover;
+    background-position: center;
+    margin-top: 75px;
+}
+.about-hero .hero-overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+}
+.about-hero .hero-content {
+    position: relative;
+    z-index: 2;
+}
+.about-hero h1 {
+    font-size: 3.8rem;
+    margin-bottom: 0.5rem;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+}
+.about-hero .hero-subtitle {
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    opacity: 0.9;
+}
+.who-we-are {
+    padding: 80px 0;
+    background: var(--light-color);
+}
+.who-we-are .grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 60px;
+    align-items: center;
+}
+.who-we-are .text-content h2 {
+    text-align: left;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+.who-we-are .text-content h2::after {
+    margin: 10px 0 0 0;
+}
+.polished-text p {
+    font-size: 1.15rem;
+    line-height: 1.9;
+    color: #333;
+    margin-bottom: 1.2rem;
+}
+.who-we-are .image-content img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+.our-capabilities {
+    padding: 80px 0;
+    background-color: var(--light-gray-bg);
+}
+.capabilities-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+.capability-card {
+    background: var(--light-color);
+    padding: 35px;
+    border-radius: 8px;
+    text-align: center;
+    border-top: 4px solid var(--primary-color);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.07);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    flex: 1 1 300px;
+    max-width: 380px;
+}
+.capability-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+    border-top-color: var(--warm-accent-color);
+}
+.card-icon {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: var(--warm-accent-color);
+}
+.capability-card h3 {
+    font-size: 1.3rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+.capability-card p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #555;
+}
+
 /* --- STYLES FOR INTERNAL PAGE HERO (e.g., Products) --- */
 .page-hero {
     position: relative;
@@ -174,7 +280,7 @@ nav ul li a:hover {
     background-image: url('https://images.pexels.com/photos/380769/pexels-photo-380769.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
     background-size: cover;
     background-position: center;
-    margin-top: 75px; /* Adjust based on your header height */
+    margin-top: 75px;
 }
 .page-hero .hero-overlay {
     position: absolute; top: 0; left: 0; width: 100%; height: 100%;
@@ -328,6 +434,17 @@ footer {
 @media (max-width: 1200px) { 
     .promises-grid { grid-template-columns: repeat(2, 1fr); } 
 }
+@media (max-width: 992px) {
+    .who-we-are .grid-container {
+        grid-template-columns: 1fr;
+    }
+    .who-we-are .text-content h2 {
+        text-align: center;
+    }
+    .who-we-are .text-content h2::after {
+        margin: 10px auto 0;
+    }
+}
 @media (max-width: 900px) {
     .details-container { flex-direction: column; align-items: center; gap: 30px; }
     .detail-box { width: 100%; max-width: 450px; }
@@ -362,7 +479,7 @@ footer {
 
     /* General Mobile Styles */
     .hero-text { text-align: center; padding: 0 20px; max-width: 100%; }
-    .hero-text h1, h1, .about-hero h1 { font-size: 2.5rem !important; }
+    h1, .hero-text h1, .about-hero h1 { font-size: 2.5rem !important; }
     h2 { font-size: 2rem; }
     .page-hero h1 { font-size: 2.8rem; }
 }

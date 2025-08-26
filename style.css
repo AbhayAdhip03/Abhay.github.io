@@ -24,7 +24,7 @@
     /* --- Mobile Navigation Styles --- */
     #hamburger-menu {
         display: block; /* Show the hamburger button */
-        font-size: 1.5rem;
+        font-size: 1.0rem;
         color: var(--secondary-color);
         background: transparent;
         border: none;
@@ -55,7 +55,7 @@
     }
 
     nav ul li a {
-        font-size: 1.5rem; /* Make links larger and easier to tap */
+        font-size: 1.0rem; /* Make links larger and easier to tap */
     }
     
     /* --- General Mobile Styles --- */

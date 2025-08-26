@@ -98,12 +98,12 @@
      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
      position: fixed; width: 100%; top: 0; z-index: 1000;
  }
-header .container {
-    display: flex; 
-    justify-content: space-between; 
+header nav {
+    display: flex;
+    justify-content: space-between;
     align-items: center;
-    padding-top: 1rem; 
-    padding-bottom: 1rem;
+    /* This padding creates a small space on the left and right edges */
+    padding: 1rem 3%;
 }
  .logo {
      font-family: var(--heading-font); font-size: 1.5rem;

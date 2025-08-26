@@ -9,7 +9,71 @@
      --warm-accent-color: #E67E22;
      --light-gray-bg: #f9f9f9;
  }
+/* --- Responsive Design --- */
 
+@media (max-width: 1200px) { .promises-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 992px) { /* No changes here */ }
+@media (max-width: 900px) {
+    .details-container { flex-direction: column; align-items: center; gap: 30px; }
+    .detail-box { width: 100%; max-width: 450px; }
+    .content-wrapper h1 { font-size: 2.5rem; }
+}
+
+/* START: REPLACE your old @media (max-width: 768px) with this block */
+@media (max-width: 768px) {
+    /* --- Mobile Navigation Styles --- */
+    #hamburger-menu {
+        display: block; /* Show the hamburger button */
+        font-size: 1.5rem;
+        color: var(--secondary-color);
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        z-index: 1001; /* Ensure it's on top */
+    }
+
+    nav ul {
+        /* Hide the navigation links by default */
+        position: fixed;
+        top: 0;
+        right: -100%; /* Position it off-screen */
+        width: 100%;
+        height: 100vh;
+        background: var(--light-color);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: right 0.4s ease-in-out;
+    }
+
+    nav ul.nav-active {
+        right: 0; /* Slide the menu in when active */
+    }
+
+    nav ul li {
+        margin: 20px 0; /* Space out the links vertically */
+    }
+
+    nav ul li a {
+        font-size: 1.5rem; /* Make links larger and easier to tap */
+    }
+    
+    /* --- General Mobile Styles --- */
+    .hero-text { text-align: center; padding: 0 20px; max-width: 100%; }
+    .hero-text h1 { font-size: 2.5rem; }
+    h2 { font-size: 2rem; }
+    .page-hero h1 { font-size: 2.8rem; }
+}
+/* END: Replacement block */
+
+
+@media (max-width: 576px) { .promises-grid { grid-template-columns: 1fr; } }
+
+/* --- Styles for Hamburger Button (Desktop) --- */
+/* Hide the hamburger button on larger screens */
+#hamburger-menu {
+    display: none;
+}
  * { margin: 0; padding: 0; box-sizing: border-box; }
  html { scroll-behavior: smooth; }
  body { font-family: var(--body-font); line-height: 1.6; }
